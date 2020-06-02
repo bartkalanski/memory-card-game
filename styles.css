@@ -15,14 +15,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    perspective: 1000px;
 }
 .memory-card{
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     position: relative;
-    border: 2px solid aqua;
     margin: 5px;
     transform: scale(1);
+    /* 3d rotation effect */
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 /* Click functionality */
 .memory-card:active{
@@ -40,4 +43,12 @@ transition: transform .2s;
     padding: 20px;
     border-radius: 5px;
     background: #1c7ccc;
+    /*hides original backface*/
+    backface-visibility: hidden;
+
+}
+
+.front-face {
+    /*allows external backface to be used*/
+    transform: rotateY(180deg);
 }
