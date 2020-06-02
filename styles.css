@@ -1,0 +1,43 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: #060AB2;
+}
+.memory-game {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.memory-card{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    border: 2px solid aqua;
+    margin: 5px;
+    transform: scale(1);
+}
+/* Click functionality */
+.memory-card:active{
+transform: scale(.97);
+transition: transform .2s;
+}
+/* Flips card 180degrees */
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+.front-face, .back-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background: #1c7ccc;
+}
