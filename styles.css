@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    background: #1C6689;
 }
 .memory-game {
     width: 640px;
@@ -42,7 +42,7 @@ transition: transform .2s;
     height: 100%;
     padding: 20px;
     border-radius: 5px;
-    background: #1c7ccc;
+    background: #A4A5A1;
     /*hides original backface*/
     backface-visibility: hidden;
 
