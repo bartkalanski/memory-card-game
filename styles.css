@@ -8,7 +8,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #1C6689;
+    background: #2a4d69;
 }
 
 .memory-game {
@@ -31,8 +31,12 @@ body {
     transition: transform .5s;
 }
 
+#index-banner {
+    display: block;
+}
 
-/* Click functionality */
+
+/* click functionality */
 
 .memory-card:active {
     transform: scale(.97);
@@ -40,7 +44,7 @@ body {
 }
 
 
-/* Flips card 180degrees */
+/* flips card 180degrees */
 
 .memory-card.flip {
     transform: rotateY(180deg);
@@ -53,24 +57,12 @@ body {
     height: 100%;
     padding: 20px;
     border-radius: 5px;
-    background: #A4A5A1;
-    /*hides original backface*/
+    background: #adcbe3;
+    /* hides original backface */
     backface-visibility: hidden;
 }
 
 .front-face {
-    /*allows external backface to be used*/
+    /* allows external backface to be used */
     transform: rotateY(180deg);
-}
-
-h1,
-h3 {
-    font-family: Georgia;
-    text-align: center;
-    margin: 1rem 0rem;
-}
-
-h1 {
-    margin-top: 0.5rem;
-    font-size: 4rem;
 }

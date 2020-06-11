@@ -5,16 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-    <section>
-        <h1>Memory Card Game</h1>
-        <h3>Click anywhere to begin</h3>
-    </section>
+    <!--Welcome Page-->
+    <div class="section" id="index-banner">
+        <div class="container searchContainer" id="searchContainer">
+            <br><br>
+            <div class="search card card-body" id="rst">
+                <h1 class="header center light-blue-text text-darken-1">Flags Memory Game</h1>
+                <div class="row">
+                    <div class="input-field col s8 push-s2">
+                        <input placeholder="Africa, Americas, Asia, Europe, Oceania" id="getInputData" type="text" class="blue-text form-control">
+                        <label for="getInputData" class="light-blue-text text-darken-1">Pick a global region of your choice</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <button id="begin" class="btn-large waves-effect waves-light blue darken-3">Begin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Playing Page-->
     <section class="memory-game" id="content">
+
         <div class="memory-card" data-framework="aurelia" id="one">
 
 
@@ -64,6 +85,8 @@
 
         </div>
     </section>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js">
     </script>
 </body>
