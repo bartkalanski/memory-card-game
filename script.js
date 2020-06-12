@@ -35,16 +35,56 @@ class UI {
 
         let numberOfCountries = data.length;
 
-        // random number generator
+        let randomNumber;
+        let randomNumberOne;
+        let randomNumberTwo;
+        let randomNumberThree;
+        let randomNumberFour;
+        let randomNumberFive;
 
-        let randomNumber = Math.floor(Math.random() * numberOfCountries);
-        let randomNumberOne = Math.floor(Math.random() * numberOfCountries);
-        let randomNumberTwo = Math.floor(Math.random() * numberOfCountries);
-        let randomNumberThree = Math.floor(Math.random() * numberOfCountries);
-        let randomNumberFour = Math.floor(Math.random() * numberOfCountries);
-        let randomNumberFive = Math.floor(Math.random() * numberOfCountries);
+        // fix repeating random number
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
 
-        // hide welcome page before game begins
+        if (numberOfCountries === 50) {
+            randomNumber = getRandom(0, 7)
+            randomNumberOne = getRandom(7, 15)
+            randomNumberTwo = getRandom(15, 23)
+            randomNumberThree = getRandom(23, 31)
+            randomNumberFour = getRandom(38, 45)
+            randomNumberFive = getRandom(45, 50)
+        } else if (numberOfCountries === 60) {
+            randomNumber = getRandom(0, 9)
+            randomNumberOne = getRandom(9, 19)
+            randomNumberTwo = getRandom(19, 29)
+            randomNumberThree = getRandom(29, 39)
+            randomNumberFour = getRandom(39, 49)
+            randomNumberFive = getRandom(49, 60)
+        } else if (numberOfCountries === 57) {
+            randomNumber = getRandom(0, 8)
+            randomNumberOne = getRandom(8, 18)
+            randomNumberTwo = getRandom(18, 27)
+            randomNumberThree = getRandom(27, 36)
+            randomNumberFour = getRandom(36, 45)
+            randomNumberFive = getRandom(45, 57)
+        } else if (numberOfCountries === 53) {
+            randomNumber = getRandom(0, 8)
+            randomNumberOne = getRandom(8, 16)
+            randomNumberTwo = getRandom(16, 24)
+            randomNumberThree = getRandom(24, 32)
+            randomNumberFour = getRandom(40, 48)
+            randomNumberFive = getRandom(48, 53)
+        } else if (numberOfCountries === 27) {
+            randomNumber = getRandom(0, 5)
+            randomNumberOne = getRandom(5, 10)
+            randomNumberTwo = getRandom(10, 15)
+            randomNumberThree = getRandom(15, 20)
+            randomNumberFour = getRandom(20, 25)
+            randomNumberFive = getRandom(25, 27)
+        }
+
+        // hide welcome page as game begins
 
         document.getElementById("index-banner").style.display =
             "none";
@@ -129,6 +169,8 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard;
 let secondCard;
+let counter = 1;
+let moves = document.getElementById("move-counter");
 
 function flipCard() {
     if (lockBoard) return;
@@ -141,6 +183,8 @@ function flipCard() {
 
     if (!hasFlippedCard) {
         //first click
+        moves.innerHTML =
+            `<h3>Move Count : ${counter++}</h3>`;
         hasFlippedCard = true;
         firstCard = this;
 
@@ -190,4 +234,6 @@ function resetBoard() {
     })
 })();
 // listens for click on specific card
-cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach((card) => {
+    card.addEventListener('click', flipCard);
+});
