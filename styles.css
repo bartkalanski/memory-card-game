@@ -1,73 +1,83 @@
-    * {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-    }
-    
-    body {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: #2a4d69;
-    }
-    
-    .memory-game {
-        width: 640px;
-        height: 640px;
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-        perspective: 1000px;
-    }
-    
-    .memory-card {
-        width: calc(25% - 10px);
-        height: calc(33.333% - 10px);
-        position: relative;
-        margin: 5px;
-        transform: scale(1);
-        /* 3d rotation effect */
-        transform-style: preserve-3d;
-        transition: transform .5s;
-    }
-    
-    #index-banner {
-        display: block;
-    }
-    /* move counter */
-    
-    #move-counter {
-        text-align: center;
-        font-family: 'Anton', sans-serif;
-        font-size: 5rem;
-        color: white;
-        line-height: 1.5em;
-    }
-    /* click functionality */
-    
-    .memory-card:active {
-        transform: scale(.97);
-        transition: transform .2s;
-    }
-    /* flips card 180degrees */
-    
-    .memory-card.flip {
-        transform: rotateY(180deg);
-    }
-    
-    .front-face,
-    .back-face {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        border-radius: 5px;
-        background: #adcbe3;
-        /* hides original backface */
-        backface-visibility: hidden;
-    }
-    
-    .front-face {
-        /* allows external backface to be used */
-        transform: rotateY(180deg);
-    }
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #2a4d69;
+}
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    /* 3d rotation effect */
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+#index-banner {
+    display: block;
+}
+
+
+/* move counter */
+
+#move-counter {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 5rem;
+    color: white;
+    line-height: 1.5em;
+}
+
+
+/* click functionality */
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+
+/* flips card 180degrees */
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background: #adcbe3;
+    /* hides original backface */
+    backface-visibility: hidden;
+    -webkit-perspective: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+
+.front-face {
+    /* allows external backface to be used */
+    transform: rotateY(180deg);
+}
